@@ -1,4 +1,354 @@
-/* App.css */
+/* Login Page Styles */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  padding: 20px;
+}
+
+.login-container {
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 600px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.car-preview {
+  flex: 1;
+  background: linear-gradient(135deg, #0c0c0c 0%, #2d2d2d 100%);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.car-preview::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,107,53,0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.car-image {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+.car-title {
+  color: white;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.car-subtitle {
+  color: #ccc;
+  font-size: 1.2rem;
+  text-align: center;
+  max-width: 350px;
+  position: relative;
+  z-index: 1;
+}
+
+.car-features {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 107, 53, 0.1);
+  padding: 8px 15px;
+  border-radius: 20px;
+  color: #ff6b35;
+}
+
+.feature i {
+  margin-right: 8px;
+}
+
+.login-section {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.logo-icon {
+  font-size: 2.5rem;
+  color: #ff6b35;
+  margin-right: 15px;
+}
+
+.logo h1 {
+  margin: 0;
+  color: #ff6b35;
+  font-size: 2.2rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ff6b35 0%, #f7931e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.login-header p {
+  color: #ccc;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.login-form {
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #ddd;
+  font-weight: 500;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.input-with-icon input {
+  padding-left: 45px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+}
+
+.remember input {
+  margin-right: 8px;
+}
+
+.remember label {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.forgot-password {
+  color: #ff6b35;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #ff6b35 0%, #f7931e 100%);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-bottom: 20px;
+}
+
+.login-btn:hover:not(:disabled) {
+  background: linear-gradient(45deg, #e55a2b 0%, #e0821a 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+.login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.divider span {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.divider p {
+  padding: 0 15px;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.social-login {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.social-btn {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.1);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-btn i {
+  margin-right: 8px;
+}
+
+.social-btn.google {
+  color: #dd4b39;
+}
+
+.social-btn.facebook {
+  color: #3b5998;
+}
+
+.social-btn:hover {
+  border-color: #ff6b35;
+  background: rgba(255, 107, 53, 0.1);
+}
+
+.signup-link {
+  text-align: center;
+  color: #aaa;
+}
+
+.signup-link a {
+  color: #ff6b35;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+.demo-note {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background: rgba(255, 107, 53, 0.1);
+  border-radius: 8px;
+  color: #ff6b35;
+  font-size: 0.9rem;
+}
+
+.logout-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  background: #c0392b;
+}
+
+/* Existing Car Customization Styles */
 .App {
   text-align: center;
   background-color: #2c3e50;
@@ -11,6 +361,7 @@
   background-color: #1a252f;
   padding: 20px;
   margin-bottom: 30px;
+  position: relative;
 }
 
 .customization-container {
@@ -446,6 +797,25 @@
   color: #95a5a6;
 }
 
+@media (max-width: 900px) {
+  .login-container {
+    flex-direction: column;
+    max-width: 500px;
+  }
+  
+  .car-preview {
+    padding: 30px;
+  }
+  
+  .car-image {
+    max-width: 300px;
+  }
+  
+  .car-title {
+    font-size: 1.8rem;
+  }
+}
+
 @media (max-width: 768px) {
   .options-row {
     justify-content: center;
@@ -490,7 +860,7 @@
     height: 20px;
   }
   
-  .action-buttons {
+  .action-butttons {
     flex-direction: column;
     align-items: center;
   }
